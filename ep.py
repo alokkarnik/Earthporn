@@ -14,6 +14,7 @@ directory = os.getcwd()+"/Images"
 if not os.path.exists(directory):
   os.makedirs(directory)
   
+#test wow 
 for i in data["data"]["children"]:
 
   imurl = i["data"]["url"]
