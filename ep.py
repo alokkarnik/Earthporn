@@ -9,6 +9,11 @@ data = json.load(obj)
 
 count = 0
 
+d = os.getcwd()+"/Images"
+
+if not os.path.exists(d):
+  os.makedirs(d)
+  
 for i in data["data"]["children"]:
 
   imurl = i["data"]["url"]
