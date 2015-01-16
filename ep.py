@@ -7,17 +7,13 @@ obj = urllib2.urlopen(url)
 
 data = json.load(obj)
 
-#print json.dumps(data, sort_keys = True, indent = 4)
 count = 0
 
 for i in data["data"]["children"]:
 
   imurl = i["data"]["url"]
   try:
-    
-    #if "jpg" not in str(imurl) or "jpeg" not in str(imurl):
-      #imurl = imurl + ".jpg"
-    
+  
     print imurl
     
     req = urllib2.Request(imurl+".jpg")
