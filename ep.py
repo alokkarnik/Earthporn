@@ -1,5 +1,6 @@
 import urllib2
 import json
+import os
 
 #URL of the EarthPorn JSON
 url = 'http://www.reddit.com/r/earthporn.json' 
@@ -17,7 +18,7 @@ count = 0
 directory = os.getcwd()+"/Images"
 
 #Check if Directory alredy exists, If not then create a NEW dir
-if not os.path.exists(direcctory):
+if not os.path.exists(directory):
   os.makedirs(directory)
   
 #Loop through the JSON URLs
@@ -31,11 +32,11 @@ for i in data["data"]["children"]:
     #Request the Full URL
     req = urllib2.Request(imurl+".jpg")
     
-    #Get the Data in the URLL
+    #Get the Data in the URL
     imgdata = urllib2.urlopen(req).read()
    
     #Create a new image file and write to it
-    fp = open(("%s"+".jpg") %(i["data"]["title"]) ,"wb")
+    fp = open((directory + "/%s"+".jpg") %(i["data"]["title"]) ,"wb")
     fp.write(imgdata)
     fp.close()
     
@@ -45,4 +46,3 @@ for i in data["data"]["children"]:
   count = count + 1
   
   print count
-
