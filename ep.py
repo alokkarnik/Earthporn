@@ -29,7 +29,7 @@ for i in data["data"]["children"]:
   
     print imurl
     
-    #Request the Full URL
+    #Request the Full URL.
     req = urllib2.Request(imurl+".jpg")
     
     #Get the Data in the URL
