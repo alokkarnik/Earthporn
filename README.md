@@ -5,6 +5,8 @@ This script will download the current 20-25 images on the Earthporn subreddit an
 
 ##**Usage**
 
+alok@alok-Lenovo-Z50-70:~$ Earthporn
+
 
 ##**Installation**
 
